@@ -5,7 +5,7 @@ Quick install and setup guide
 =============================
 
 ```
-git clone git@github.com:stefan-bofirov-dnh/Pugna.git Pugna
+git clone git@github.com:PugnaGame/Pugna.git Pugna
 cd Pugna
 vagrant up
 ```
