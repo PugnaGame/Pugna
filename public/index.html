@@ -1,9 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-	<title>Welcome to Pugna</title>
-  </head>
-  <body>
-	<h1>Welcome to the Pugna :)</h1>
-  </body>
+    <head>
+        <title>Welcome to Pugna</title>
+        <style>body {padding: 0; margin: 0; color: white}</style>
+        <style>canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -99 }</style>
+    </head>
+    <body>
+        <h1>Welcome to the Pugna :)</h1>
+        <script type="text/javascript" src="js/three.min.js"></script>
+
+        <script type="text/javascript">
+            var scene = new THREE.Scene();
+            var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            
+            var renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            var geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
+            var material = new THREE.MeshBasicMaterial({color: 0xffff00});
+            var torusKnot = new THREE.Mesh(geometry, material);
+            scene.add(torusKnot);
+
+
+            camera.position.z = 45;
+            var render = function() {
+                setTimeout(function() {
+                    requestAnimationFrame(render);
+                    torusKnot.rotation.x += 0.1;
+                    torusKnot.rotation.y += 0.1;
+                    renderer.render(scene, camera)
+                }, 1000 / 60);
+            };
+            render();
+        </script>
+    </body>
 </html>
