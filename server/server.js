@@ -1,3 +1,14 @@
+var express = require('express');
+ 
+var server = express();
+server.use(express.static(__dirname + '/../public'));
+ 
+var port = 3000;
+server.listen(port, function() {
+    console.log('server listening on port ' + port);
+});
+
+/*
 var http = require('http')
   , sys  = require('sys');
 
@@ -17,4 +28,4 @@ var app = http.createServer( function( request, response ) {
 
 // Listen for incoming requests on port 3000
 app.listen(3000);
-
+*/

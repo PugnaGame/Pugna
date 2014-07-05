@@ -4,7 +4,7 @@ Vagrant.configure("2") do |config|
     config.vm.provision :shell, :path => "node-bootstrap.sh"
     config.vm.network :private_network, ip: '10.0.33.34'
     config.vm.hostname = 'pugna.local'
-    config.vm.network :forwarded_port, guest: 80, host: 3000
+    config.vm.network :forwarded_port, guest: 3000, host: 80
 
     config.vm.provider :virtualbox do |vb|
         vb.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
