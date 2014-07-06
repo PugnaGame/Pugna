@@ -10,7 +10,7 @@ git clone git@github.com:PugnaGame/Pugna.git Pugna
 cd Pugna
 vagrant up
 ```
-Add pugna.local to your /etc/hosts file
+Add `10.0.33.34 pugna.local` to your /etc/hosts file
 
 NodeJS server will be started automatically, visit http://pugna.local:3000
 

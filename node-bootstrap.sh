@@ -10,6 +10,7 @@ then
 	add-apt-repository -y ppa:chris-lea/node.js
 	apt-get -y update
 	apt-get install -y python-software-properties vim git curl build-essential nodejs
+	apt-get install -y npm
 
 	# Install node dependencies
 	(cd /vagrant/server/ && npm install)
